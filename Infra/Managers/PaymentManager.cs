@@ -1,6 +1,8 @@
 ﻿using Adapters;
+using DTO;
 using Entities;
 using Services;
+using System.Collections.Generic;
 
 namespace Infra.Managers
 {
@@ -12,9 +14,27 @@ namespace Infra.Managers
         {
             _paymentRepository = paymentRepository;
         }
-        public IEnumerable<Check> RecoverAllPayments()
+        public IEnumerable<PaymentDTO> RecoverAllPayments()
         {
-            return _paymentRepository.GetAllPaymentsCheck().ToList();
+            List <PaymentDTO> allPayments = new List<PaymentDTO>();
+            allPayments.AddRange(GetAllCheckPayments());
+
+            return allPayments;
+        }
+        private IEnumerable<PaymentDTO> GetAllCheckPayments()
+        {
+            List<Check> checksList = _paymentRepository.GetAllPaymentsCheck().ToList();
+            List<PaymentDTO> payments = new List<PaymentDTO>();
+
+            foreach (var check in checksList)
+            {
+                payments.Add(new PaymentDTO
+                {
+                    PaymentType = check._paymentType,
+                    Value = check._quantity
+                });
+            }
+            return payments;
         }
 
         public Task<int> RegisterAPayment(Check paymentCheck)

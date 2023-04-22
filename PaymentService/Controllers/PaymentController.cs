@@ -1,3 +1,4 @@
+using DTO;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -25,7 +26,7 @@ namespace PaymentService.Controllers
         [HttpGet(Name = "GetAllPayments")]
         public IActionResult GetAllPayments()
         {
-            IEnumerable<Check> payments = _paymentServices.RecoverAllPayments();
+            IEnumerable<PaymentDTO> payments = _paymentServices.RecoverAllPayments();
             return Ok(payments);
         }
     }
