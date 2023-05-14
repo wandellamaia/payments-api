@@ -3,6 +3,7 @@ using DTO;
 using Entities;
 using Services;
 using System.Collections.Generic;
+using System.Web.Http;
 
 namespace Infra.Managers
 {
@@ -14,32 +15,39 @@ namespace Infra.Managers
         {
             _paymentRepository = paymentRepository;
         }
-        public IEnumerable<PaymentDTO> RecoverAllPayments()
+        public IEnumerable<PaymentDTO> RecoverAllChecksPayments()
         {
             List <PaymentDTO> allPayments = new List<PaymentDTO>();
             allPayments.AddRange(GetAllCheckPayments());
 
             return allPayments;
         }
+        public IEnumerable<PaymentDTO> RecoverAllPayments()
+        {
+            List<PaymentDTO> allPayments = new List<PaymentDTO>();
+            allPayments.AddRange(GetAllCheckPayments());
+
+            return allPayments;
+        }
         private IEnumerable<PaymentDTO> GetAllCheckPayments()
         {
-            List<Check> checksList = _paymentRepository.GetAllPaymentsCheck().ToList();
+            List<Payment> checksList = _paymentRepository.GetAllPayments().ToList();
             List<PaymentDTO> payments = new List<PaymentDTO>();
 
             foreach (var check in checksList)
             {
                 payments.Add(new PaymentDTO
                 {
-                    PaymentType = check._paymentType,
-                    Value = check._quantity
+                    PaymentType = check.Type(),
+                    Value = check.Value()
                 });
             }
             return payments;
         }
 
-        public Task<int> RegisterAPayment(Check paymentCheck)
+        public void RegisterPayment(PaymentDTO paymentCheck)
         {
-            return Task.FromResult(0);
+            _paymentRepository.Insert(paymentCheck);
         }
     }
 }

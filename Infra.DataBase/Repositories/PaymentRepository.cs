@@ -1,4 +1,5 @@
 ﻿using Adapters;
+using DTO;
 using Entities;
 
 namespace Infra.DataBase.Repositories
@@ -6,18 +7,14 @@ namespace Infra.DataBase.Repositories
 
     public class PaymentRepository : IPaymentRepository
     {
-        public Task<IEnumerable<Payment>> GetAll()
+        public IEnumerable<Payment> GetAllPayments()
         {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<Check> GetAllPaymentsCheck()
-        {
-            return PaymentsData.checks;
+            return PaymentsData.payments;
         }
 
-        public Task<int> Insert(Payment payment)
+        public void Insert(PaymentDTO payment)
         {
-            throw new NotImplementedException();
+            PaymentsData.payments.Add(new Money((float)1.0));
         }
     }
 }
