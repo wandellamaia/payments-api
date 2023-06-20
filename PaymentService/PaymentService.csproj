@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infra.DataBase\Infra.DataBase.csproj" />
-    <ProjectReference Include="..\Infra\Infra.csproj" />
     <ProjectReference Include="..\Payment\Entities.csproj" />
+    <ProjectReference Include="..\ServicesManager\ServicesManager.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 

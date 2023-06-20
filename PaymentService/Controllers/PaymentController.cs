@@ -1,7 +1,6 @@
+using Domain.Services;
 using DTO;
-using Entities;
 using Microsoft.AspNetCore.Mvc;
-using Services;
 
 namespace PaymentService.Controllers
 {

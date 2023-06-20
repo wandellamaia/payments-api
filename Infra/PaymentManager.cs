@@ -1,11 +1,9 @@
 ﻿using Adapters;
+using Domain.Services;
 using DTO;
 using Entities;
-using Services;
-using System.Collections.Generic;
-using System.Web.Http;
 
-namespace Infra.Managers
+namespace Services.Manager
 {
     public class PaymentManager : IPaymentServices
     {
@@ -17,7 +15,7 @@ namespace Infra.Managers
         }
         public IEnumerable<PaymentDTO> RecoverAllChecksPayments()
         {
-            List <PaymentDTO> allPayments = new List<PaymentDTO>();
+            List<PaymentDTO> allPayments = new List<PaymentDTO>();
             allPayments.AddRange(GetAllCheckPayments());
 
             return allPayments;

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "http": {
+    "PaymentAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

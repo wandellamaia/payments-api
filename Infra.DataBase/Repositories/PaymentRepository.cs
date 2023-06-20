@@ -12,9 +12,9 @@ namespace Infra.DataBase.Repositories
             return PaymentsData.payments;
         }
 
-        public void Insert(PaymentDTO payment)
+        public void Insert(Payment payment)
         {
-            PaymentsData.payments.Add(new Money((float)1.0));
+            PaymentsData.payments.Add(payment);
         }
     }
 }

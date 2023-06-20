@@ -6,6 +6,6 @@ namespace Adapters
     public interface IPaymentRepository
     {
         public IEnumerable<Payment> GetAllPayments();
-        public void Insert(PaymentDTO payment);
+        public void Insert(Payment payment);
     }
 }

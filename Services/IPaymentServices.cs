@@ -1,7 +1,6 @@
 ﻿using DTO;
-using Entities;
 
-namespace Services
+namespace Domain.Services
 {
     public interface IPaymentServices
     {
