@@ -10,6 +10,6 @@ namespace ServicesManager
     {
         public const string CHECK = "Check";
         public const string MONEY = "Money";
-        public const string CARD = "Cartão";
+        public const string CARD = "Card";
     }
 }
