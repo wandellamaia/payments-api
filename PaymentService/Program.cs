@@ -1,8 +1,7 @@
 using Adapters;
+using Domain.Services;
 using Infra.DataBase.Repositories;
-using Infra.Managers;
-using Microsoft.Extensions.DependencyInjection;
-using Services;
+using ServicesManager;
 
 var builder = WebApplication.CreateBuilder(args);
 

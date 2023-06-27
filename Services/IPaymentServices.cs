@@ -1,12 +1,10 @@
 ﻿using DTO;
-using Entities;
 
-namespace Services
+namespace Domain.Services
 {
     public interface IPaymentServices
     {
         IEnumerable<PaymentDTO> RecoverAllPayments();
-
-        Task<int> RegisterAPayment(Check paymentCheck);
+        void RegisterPayment(PaymentDTO payment);
     }
 }
