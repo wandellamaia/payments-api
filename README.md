@@ -1,7 +1,12 @@
-<h1 align="center">Microsserviços de pagamentos 💰</h1>
+<h1 align="center">Microsservice API to payments 💰</h1>
 
-<p align="center">Este projeto oferece uma solução simples de um microsserviço de pagamentos para facilitar o entendimento da Arquitetura Hexagonal e aplicação de Designer Patterns.
-</p>
+<p align="center"> This project show the easy idea from put on in solution using clean architeture and design pattern. </p>
+
+### Features
+
+- [x] GetAllPayments
+- [x] SetPayment
+
 
 Feito com ❤️ por Wandella Maia 👋🏽 Entre em contato!
 

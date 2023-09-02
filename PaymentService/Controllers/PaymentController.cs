@@ -17,6 +17,7 @@ namespace PaymentService.Controllers
             _logger = logger;
             _paymentServices = paymentServices;
         }
+
         [HttpGet(Name = "GetAllPayments")]
         public IActionResult GetAllPayments()
         {
